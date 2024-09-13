@@ -1,2 +1,2 @@
-# FS-WorkerTakeover
-Worker Takeover mod for Farming Simulator.
+# FS22-WorkerTakeover
+Worker Takeover mod for Farming Simulator 22.
