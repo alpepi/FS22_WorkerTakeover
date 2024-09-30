@@ -7,13 +7,13 @@
 
     <title>
         <en>Worker Takeover</en>
-        <de>Übernahme Arbeit</de>
+        <de>Arbeiterübernahme</de>
         <fr>Reprise De Travail</fr>
     </title>
 
     <description>
-        <en> <![CDATA[ 
-Seamlessly take control of the vehicle when dismissing an AI worker. 
+        <en> <![CDATA[
+Seamlessly take control of the vehicle when dismissing an AI worker.
 
 Enter the vehicle and dismiss the AI worker: the cruise control will remain activated and the implements will stay lowered and turned on, as applicable.
 
@@ -22,17 +22,17 @@ Without this mod, when the player dismisses an AI worker, the cruise control is 
 For more information, support, and to report issues, please visit <a href="https://github.com/alpepi/FS22_WorkerTakeover">GitHub</a>. ]]>
         </en>
 
-        <de><![CDATA[ 
-Nahtlos die Kontrolle über das Fahrzeug übernehmen, wenn ein KI-Arbeiter entlassen wird.
+        <de><![CDATA[
+Übernimm nahtlos die Kontrolle über das Fahrzeug, wenn du einen KI-Mitarbeiter entlässt.
 
-Steigen Sie in das Fahrzeug ein und entlassen Sie den KI-Arbeiter: Der Tempomat bleibt aktiviert und die Anbaugeräte bleiben, sofern zutreffend, abgesenkt und eingeschaltet.
+Betritt man das Fahrzeug und entlässt den KI-Mitarbeiter, bleibt der Tempomat aktiviert und die Anbaugeräte bleiben abgesenkt und ggf. eingeschaltet.
 
-Ohne dieses Mod wird beim Entlassen eines KI-Arbeiters der Tempomat deaktiviert und die aktiven Anbaugeräte werden automatisch angehoben und/oder abgeschaltet.
+Ohne diesen Mod wird der Tempomat deaktiviert, wenn der Spieler einen KI-Arbeiter entlässt, und die aktiven Arbeitsgeräte werden automatisch angehoben und/oder ausgeschaltet.
 
 Für weitere Informationen, Unterstützung und um Probleme zu melden, besuchen Sie bitte <a href="https://github.com/alpepi/FS22_WorkerTakeover">GitHub</a>. ]]>
         </de>
 
-        <fr><![CDATA[ 
+        <fr><![CDATA[
 Prenez contrôle du véhicule sans interruption lorsque vous renvoyez un ouvrier.
 
 Montez dans le véhicule et renvoyez l'ouvrier: le régulateur de vitesse demeure actif et les outils demeurent baissés et en marche, le cas échéant.
