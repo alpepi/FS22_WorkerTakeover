@@ -2,15 +2,17 @@
 -- FS22 Worker Takover mod
 --
 -- @author: alpepi
--- @date: 2024-09-16
--- @version: 1.0.0.0
+-- @date: 2024-10-16
+-- @version: 1.0.1.0
 --
 -- @support and feedback: https://github.com/alpepi/FS22_WorkerTakeover
 --
 
+source(g_currentModDirectory .. "modsCompatibility/CourseplayCompatibility.lua")
+
 local function ccCheck(ajv)
-    if ajv:getCruiseControlState() == Drivable.CRUISECONTROL_STATE_OFF or ajv:getAIFieldWorkerIsTurning()
-        or not ajv:getIsDrivingForward() or (ajv.spec_aiFieldWorker.aiDriveParams.maxSpeed ~= ajv:getSpeedLimit(true) and ajv.spec_aiFieldWorker.aiDriveParams.valid)
+    if  ajv:getCruiseControlState() == Drivable.CRUISECONTROL_STATE_OFF or ajv:getAIFieldWorkerIsTurning()
+        or ajv:getDrivingDirection() <= 0 or (ajv.spec_aiFieldWorker.aiDriveParams.maxSpeed ~= ajv:getSpeedLimit(true) and ajv.spec_aiFieldWorker.aiDriveParams.valid)
     then
         return false
     else
@@ -19,9 +21,9 @@ local function ccCheck(ajv)
 end
 
 local function isUnfoldedCheck(v, specF)
-    if specF == nil or #specF.foldingParts == 0
+    if  specF == nil or #specF.foldingParts == 0
         or not v:getIsFoldMiddleAllowed() or not v:getIsUnfolded()
-        or specF.foldMoveDirection == -1 * specF.turnOnFoldDirection or specF.foldAnimTime == specF.foldMiddleAnimTime
+        or specF.foldMoveDirection == -1*specF.turnOnFoldDirection or specF.foldAnimTime == specF.foldMiddleAnimTime
     then
         return false
     else
@@ -31,7 +33,7 @@ end
 
 local function toggleAIVehicleOverwrite(aijobvehicle, superFunc)
     if aijobvehicle == nil then
-        return (superFunc(aijobvehicle))
+        return(superFunc(aijobvehicle))
     end
 
     local turnOnCruiseCheck = nil
@@ -56,9 +58,8 @@ local function toggleAIVehicleOverwrite(aijobvehicle, superFunc)
         implements = aijobvehicle:getAttachedImplements()
         if implements ~= nil then
             for _, implement in ipairs(implements) do
-                beforeImplementStates[implement.jointDescIndex] = {
-                    isLowered = implement.object.spec_attachable.attacherJoint.allowsLowering and
-                    implement.object:getIsLowered(true)
+            beforeImplementStates[implement.jointDescIndex] = {
+                    isLowered = implement.object.spec_attachable.attacherJoint.allowsLowering and implement.object:getIsLowered(true)
                 }
             end
         end
@@ -70,6 +71,7 @@ local function toggleAIVehicleOverwrite(aijobvehicle, superFunc)
         if turnOnCruiseCheck then
             aijobvehicle:setCruiseControlMaxSpeed(aijobvehicle:getCruiseControlSpeed())
             aijobvehicle:setCruiseControlState(Drivable.CRUISECONTROL_STATE_ACTIVE, false)
+            WTCourseplayCompatibility.cpKeepCC(aijobvehicle)
         end
 
         if vehicles ~= nil then
@@ -79,7 +81,7 @@ local function toggleAIVehicleOverwrite(aijobvehicle, superFunc)
                 end
 
                 if beforeVehicleStates[i].isUnfolded then
-                    vehicle:setFoldState(vehicle.spec_foldable.turnOnFoldDirection, false, false)
+                    vehicle:setFoldState(vehicle.spec_foldable.turnOnFoldDirection , false, false)
                 end
             end
         end
@@ -91,8 +93,7 @@ local function toggleAIVehicleOverwrite(aijobvehicle, superFunc)
 
                     if implement.object.spec_attachable.lowerAnimation ~= nil and implement.object.playAnimation ~= nil then
                         local spec = implement.object.spec_attachable
-                        implement.object:playAnimation(spec.lowerAnimation, spec.lowerAnimationSpeed,
-                            implement.object:getAnimationTime(spec.lowerAnimation), false)
+                        implement.object:playAnimation(spec.lowerAnimation, spec.lowerAnimationSpeed, implement.object:getAnimationTime(spec.lowerAnimation), false)
                     end
                 end
             end

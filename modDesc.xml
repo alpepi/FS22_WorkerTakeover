@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
 
 <modDesc descVersion="80">
 
     <author>alpepi</author>
-    <version>1.0.0.0</version>
+    <version>1.0.1.0</version>
 
     <title>
         <en>Worker Takeover</en>
@@ -12,32 +12,44 @@
     </title>
 
     <description>
-        <en> <![CDATA[
+        <en> <![CDATA[ 
 Seamlessly take control of the vehicle when dismissing an AI worker.
 
 Enter the vehicle and dismiss the AI worker: the cruise control will remain activated and the implements will stay lowered and turned on, as applicable.
 
 Without this mod, when the player dismisses an AI worker, the cruise control is deactivated and the active implements are automatically lifted and/or turned off.
 
+Changelog 1.0.1.0:
+- Fixed issue with cruise control being enabled on stationary vehicle
+- Added compatibility with Courseplay AI workers
+
 For more information, support, and to report issues, please visit <a href="https://github.com/alpepi/FS22_WorkerTakeover">GitHub</a>. ]]>
         </en>
 
-        <de><![CDATA[
+        <de><![CDATA[ 
 Übernimm nahtlos die Kontrolle über das Fahrzeug, wenn du einen KI-Mitarbeiter entlässt.
 
 Betritt man das Fahrzeug und entlässt den KI-Mitarbeiter, bleibt der Tempomat aktiviert und die Anbaugeräte bleiben abgesenkt und ggf. eingeschaltet.
 
 Ohne diesen Mod wird der Tempomat deaktiviert, wenn der Spieler einen KI-Arbeiter entlässt, und die aktiven Arbeitsgeräte werden automatisch angehoben und/oder ausgeschaltet.
 
+Changelog 1.0.1.0:
+- Das Problem, dass der Tempomat bei stehendem Fahrzeug aktiviert wurde, wurde behoben
+- Kompatibilität mit Courseplay KI-Arbeitern hinzugefügt
+
 Für weitere Informationen, Unterstützung und um Probleme zu melden, besuchen Sie bitte <a href="https://github.com/alpepi/FS22_WorkerTakeover">GitHub</a>. ]]>
         </de>
 
-        <fr><![CDATA[
+        <fr><![CDATA[ 
 Prenez contrôle du véhicule sans interruption lorsque vous renvoyez un ouvrier.
 
 Montez dans le véhicule et renvoyez l'ouvrier: le régulateur de vitesse demeure actif et les outils demeurent baissés et en marche, le cas échéant.
 
-Sans cette modification, lorsqu'un joueur renvoi un ouvrier, le régulateur de vitesse est désactivé et les outils actifs sont automatiquement éteints et soulevés
+Sans cette modification, lorsqu'un joueur renvoi un ouvrier, le régulateur de vitesse est désactivé et les outils actifs sont automatiquement éteints et soulevés.
+
+Journal des modifications 1.0.1.0:
+- Correction du bogue où le régulateur de vitesse est maintenu pour un véhicule stationnaire
+- Ajout de compatibilité avec ouvriers Courseplay
 
 Pour plus d'informations, de l'assistance et signaler des problèmes, visitez <a href="https://github.com/alpepi/FS22_WorkerTakeover">GitHub</a>. ]]>
         </fr>
